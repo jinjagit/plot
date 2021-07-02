@@ -1,6 +1,6 @@
 use plotters::prelude::*;
 
-pub fn plot() -> Result<(), Box<dyn std::error::Error>> {
+pub fn plot(line_coords: std::vec::Vec<(f32, f32)>, point_coords: std::vec::Vec<(f32, f32)>) -> Result<(), Box<dyn std::error::Error>> {
     let root = BitMapBackend::new("images/5.png", (640, 640)).into_drawing_area();
     root.fill(&WHITE).unwrap();
     let root = root.margin(10, 10, 10, 20);
@@ -26,12 +26,12 @@ pub fn plot() -> Result<(), Box<dyn std::error::Error>> {
 
     // And we can draw something in the drawing area
     chart.draw_series(LineSeries::new(
-        vec![(0.0, 0.0), (0.5, 0.5), (0.8, 0.7), (0.0, 0.0)],
+      line_coords,
         &RED,
     ))?;
     // Similarly, we can draw point series
     chart.draw_series(PointSeries::of_element(
-        vec![(0.0, 0.0), (0.5, 0.5), (0.8, 0.7), (0.3, 0.5)],
+      point_coords,
         5,
         &RED,
         &|c, s, st| {
