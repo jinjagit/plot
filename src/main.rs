@@ -1,7 +1,7 @@
 use plotters::prelude::*;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let root = BitMapBackend::new("images/5.png", (640, 640)).into_drawing_area();
-    root.fill(&WHITE);
+    root.fill(&WHITE).unwrap();
     let root = root.margin(10, 10, 10, 10);
     // After this point, we should be able to draw construct a chart context
     let mut chart = ChartBuilder::on(&root)
