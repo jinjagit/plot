@@ -6,7 +6,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // After this point, we should be able to draw construct a chart context
     let mut chart = ChartBuilder::on(&root)
         // Set the caption of the chart
-        .caption("This is our first plot", ("sans-serif", 40).into_font())
+        .caption("Points & lines :)", ("sans-serif", 40).into_font())
         // Set the size of the label region
         .x_label_area_size(20)
         .y_label_area_size(40)
@@ -30,7 +30,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ))?;
     // Similarly, we can draw point series
     chart.draw_series(PointSeries::of_element(
-        vec![(0.0, 0.0), (5.0, 5.0), (8.0, 7.0)],
+        vec![(0.0, 0.0), (5.0, 5.0), (8.0, 7.0), (3.5, 5.5)],
         5,
         &RED,
         &|c, s, st| {
