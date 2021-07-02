@@ -25,7 +25,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // And we can draw something in the drawing area
     chart.draw_series(LineSeries::new(
-        vec![(0.0, 0.0), (5.0, 5.0), (8.0, 7.0)],
+        vec![(0.0, 0.0), (5.0, 5.0), (8.0, 7.0), (0.0, 0.0)],
         &RED,
     ))?;
     // Similarly, we can draw point series
